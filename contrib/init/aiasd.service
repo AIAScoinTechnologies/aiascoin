@@ -1,0 +1,26 @@
+[Unit]
+Description=Aias's distributed currency daemon
+After=network.target
+
+[Service]
+User=aias
+Group=aias
+
+Type=forking
+PIDFile=/var/lib/aiasd/aiasd.pid
+
+ExecStart=/usr/bin/aiasd -daemon -pid=/var/lib/aiasd/aiasd.pid \
+          -conf=/etc/aias/aias.conf -datadir=/var/lib/aiasd
+
+ExecStop=-/usr/bin/aias-cli -conf=/etc/aias/aias.conf \
+         -datadir=/var/lib/aiasd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Aias
+Comment=Aias P2P Cryptocurrency
+Comment[fr]=Aias, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Aias, eşten eşe kriptografik sanal para birimi
+Exec=aias-qt %u
+Terminal=false
+Type=Application
+Icon=aias128
+MimeType=x-scheme-handler/aias;
+Categories=Office;Finance;

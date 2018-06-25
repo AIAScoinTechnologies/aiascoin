@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/aias_bg.qm</file>
+        <file alias="ca">locale/aias_ca.qm</file>
+        <file alias="cs">locale/aias_cs.qm</file>
+        <file alias="da">locale/aias_da.qm</file>
+        <file alias="de">locale/aias_de.qm</file>
+        <file alias="en">locale/aias_en.qm</file>
+        <file alias="en_US">locale/aias_en_US.qm</file>
+        <file alias="es">locale/aias_es.qm</file>
+        <file alias="fi">locale/aias_fi.qm</file>
+        <file alias="fr_FR">locale/aias_fr_FR.qm</file>
+        <file alias="hr">locale/aias_hr.qm</file>
+        <file alias="it">locale/aias_it.qm</file>
+        <file alias="ja">locale/aias_ja.qm</file>
+        <file alias="ko_KR">locale/aias_ko_KR.qm</file>
+        <file alias="nl">locale/aias_nl.qm</file>
+        <file alias="pl">locale/aias_pl.qm</file>
+        <file alias="pt">locale/aias_pt.qm</file>
+        <file alias="pt_BR">locale/aias_pt_BR.qm</file>
+        <file alias="ro_RO">locale/aias_ro_RO.qm</file>
+        <file alias="ru">locale/aias_ru.qm</file>
+        <file alias="sk">locale/aias_sk.qm</file>
+        <file alias="sv">locale/aias_sv.qm</file>
+        <file alias="tr">locale/aias_tr.qm</file>
+        <file alias="uk">locale/aias_uk.qm</file>
+        <file alias="zh_CN">locale/aias_zh_CN.qm</file>
+        <file alias="zh_TW">locale/aias_zh_TW.qm</file>
+    </qresource>
+</RCC>
