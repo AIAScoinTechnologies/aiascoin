@@ -1,0 +1,26 @@
+FROM ubuntu:18.04
+
+WORKDIR /aias
+RUN apt-get update
+RUN apt-get -y install --fix-missing build-essential libcurl4-gnutls-dev libxml2-dev \
+    libssl-dev libdb-dev libdb++-dev autoconf automake libtool pkg-config \
+    libboost-all-dev bsdmainutils libevent-dev \
+    libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools \
+    libqrencode-dev protobuf-compiler g++-mingw-w64-x86-64 nsis bsdmainutils 
+RUN update-alternatives --config x86_64-w64-mingw32-g++
+COPY ./aias130 .
+RUN PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
+RUN cd depends
+RUN make HOST=x86_64-w64-mingw32
+RUN cd ..
+RUN ./autogen.sh
+RUN CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site --with-incompatible-bdb --with-gui ./configure --prefix=/
+RUN make
+RUN mkdir /dist
+RUN make install DESTDIR=/dist
+RUN make deploy DESTDIR=/dist
+RUN mkdir /root/.aias
+COPY ./aias.conf /root/.aias/aias.conf
+RUN chmod 600 /root/.aias/aias.conf
+RUN cat /root/.aias/aias.conf
+ENTRYPOINT [ "aias-qt" ]  
