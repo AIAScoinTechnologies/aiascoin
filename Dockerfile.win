@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 WORKDIR /aias
 RUN apt-get update
@@ -10,12 +10,9 @@ RUN apt-get -y install --fix-missing build-essential libcurl4-gnutls-dev libxml2
 RUN update-alternatives --config x86_64-w64-mingw32-g++
 COPY ./aias130 .
 RUN PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
-RUN cd depends
-RUN make HOST=x86_64-w64-mingw32
-RUN cd ..
 RUN ./autogen.sh
-RUN CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site --with-incompatible-bdb --with-gui ./configure --prefix=/
-RUN make
+RUN CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --with-incompatible-bdb --with-gui --prefix=/
+RUN make HOST=x86_64-w64-mingw32
 RUN mkdir /dist
 RUN make install DESTDIR=/dist
 RUN make deploy DESTDIR=/dist
@@ -23,4 +20,4 @@ RUN mkdir /root/.aias
 COPY ./aias.conf /root/.aias/aias.conf
 RUN chmod 600 /root/.aias/aias.conf
 RUN cat /root/.aias/aias.conf
-ENTRYPOINT [ "aias-qt" ]  
+ENTRYPOINT [ "aias-qt" ]
