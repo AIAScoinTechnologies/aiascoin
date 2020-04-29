@@ -20,4 +20,4 @@ RUN mkdir /root/.aias
 COPY ./aias.conf /root/.aias/aias.conf
 RUN chmod 600 /root/.aias/aias.conf
 RUN cat /root/.aias/aias.conf
-ENTRYPOINT [ "aias-qt" ]
+ENTRYPOINT [ "aiasd" ]
