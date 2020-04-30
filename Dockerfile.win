@@ -11,7 +11,7 @@ RUN update-alternatives --config x86_64-w64-mingw32-g++
 COPY ./aias130 .
 RUN PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
 RUN ./autogen.sh
-RUN CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --with-incompatible-bdb --with-gui --prefix=/
+RUN CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32  --with-incompatible-bdb --with-gui
 RUN make HOST=x86_64-w64-mingw32
 RUN mkdir /dist
 RUN make install DESTDIR=/dist
