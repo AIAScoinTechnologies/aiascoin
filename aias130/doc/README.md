@@ -52,11 +52,6 @@ The Aias repo's [root README](https://github.com/AIAScoinTechnologies/aiascoin/b
 - [Unauthenticated REST Interface](REST-interface.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 
-### Resources
-
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=4305471.0) .
-* Join the [Aias-Dev] Discord groups [Aias Discord Groups](https://discord.gg/AUgTrb).
-
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
 - [Files](files.md)
