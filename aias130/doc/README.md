@@ -1,9 +1,9 @@
-Aias Core
+AIAS Core
 =====================
 
 Setup
 ---------------------
-[Aias Core](http://Aiascoin.com) is the original Aias client and it builds the backbone of the network. However, it downloads and stores the entire history of Aias transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[AIAS Core](https://www.aiascoin.com) is the original Aias client and it builds the backbone of the network. However, it downloads and stores the entire history of Aias transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -26,10 +26,10 @@ Drag Aias-Qt to your applications folder, and then run Aias-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Aias Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [AIAS Wiki](https://github.com/AIAScoinTechnologies/aiascoin/wiki) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php) or on the [Aias Forum](http://Aiascoin.com/).
-* Join one of our Discord groups [Aias Discord Groups](https://discord.gg/YcnvMqt).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=4305471.0) or on the [Aias Forum](https://t.me/aiascoin/).
+* Join one of our Discord groups [Aias Discord Groups](https://discord.gg/AUgTrb).
 
 Building
 ---------------------
@@ -41,13 +41,12 @@ The following are developer notes on how to build Aias on your native platform. 
 
 Development
 ---------------------
-The Aias repo's [root README](https://github.com/eastcoastcrypto/Aias/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Aias repo's [root README](https://github.com/AIAScoinTechnologies/aiascoin/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/bitcoin/doxygen/) ***TODO***
 - [Translation Process](translation_process.md)
 - [Unit Tests](unit-tests.md)
 - [Unauthenticated REST Interface](REST-interface.md)
@@ -55,8 +54,8 @@ The Aias repo's [root README](https://github.com/eastcoastcrypto/Aias/blob/maste
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) .
-* Join the [Aias-Dev] Discord groups [Aias Discord Groups](https://discord.gg/YcnvMqt).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=4305471.0) .
+* Join the [Aias-Dev] Discord groups [Aias Discord Groups](https://discord.gg/AUgTrb).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
