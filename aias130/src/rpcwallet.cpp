@@ -324,7 +324,7 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
 
 Value sendtoaddress(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() < 2 || params.size() > 5)
+    if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
             "sendtoaddress \"aiasaddress\" amount ( \"comment\" \"comment-to\" )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
@@ -347,13 +347,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Aias address");
 
     // Amount
-    CAmount nAmount;
-    if (params[1].type() == real_type) {
-        nAmount = AmountFromValue(params[1]);
-    } else {
-        nAmount = AmountFromValue(Value(::atof(params[1].get_str().c_str())));
-    }
-    
+    CAmount nAmount = AmountFromValue(params[1]);
 
     // Wallet comments
     CWalletTx wtx;
@@ -371,7 +365,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 
 Value sendtoaddressix(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() < 2 || params.size() > 5)
+    if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
             "sendtoaddressix \"aiasaddress\" amount ( \"comment\" \"comment-to\" )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +

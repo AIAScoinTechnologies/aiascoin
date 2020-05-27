@@ -252,8 +252,7 @@ Value getblockhash(const Array& params, bool fHelp)
 
 Value getblock(const Array& params, bool fHelp)
 {
-
-    if (fHelp || params.size() < 1 || params.size() > 3)
+    if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "getblock \"hash\" ( verbose )\n"
             "\nIf verbose is false, returns a string that is serialized, hex-encoded data for block 'hash'.\n"
@@ -302,23 +301,8 @@ Value getblock(const Array& params, bool fHelp)
     uint256 hash(strHash);
 
     bool fVerbose = true;
-    bool details = false;
-    if (params.size() > 1) {
-        try {
-            fVerbose = params[1].get_bool();
-        } catch(exception& e) {
-            cerr << e.what() << '\n';
-            int level = params[1].get_int();
-            if (level == 0) {
-                fVerbose = false;
-            } else if (level == 2) {
-                details = true;
-            }
-            
-        }
-        
-    }
-        
+    if (params.size() > 1)
+        fVerbose = params[1].get_bool();
 
     if (mapBlockIndex.count(hash) == 0)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
@@ -336,12 +320,7 @@ Value getblock(const Array& params, bool fHelp)
         return strHex;
     }
 
-    return blockToJSON(block, pblockindex, details);
-}
-
-
-Value getblock(const Array& params, int vLevel, bool fHelp) {
-    return getblock(params, true);
+    return blockToJSON(block, pblockindex);
 }
 
 Value getblockheader(const Array& params, bool fHelp)

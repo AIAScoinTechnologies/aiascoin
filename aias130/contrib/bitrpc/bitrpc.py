@@ -5,8 +5,8 @@ import getpass
 
 # ===== BEGIN USER SETTINGS =====
 # if you do not set these you will be prompted for a password for every command
-rpcuser = "rpc"
-rpcpass = "pass"
+rpcuser = ""
+rpcpass = ""
 # ====== END USER SETTINGS ======
 
 
