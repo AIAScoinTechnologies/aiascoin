@@ -347,13 +347,13 @@ Value sendtoaddress(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Aias address");
 
     // Amount
-    CAmount nAmount;
-    if (params[1].type() == real_type) {
-        nAmount = AmountFromValue(params[1]);
-    } else {
-        nAmount = AmountFromValue(Value(::atof(params[1].get_str().c_str())));
-    }
-    
+//     CAmount nAmount;
+//     if (params[1].type() == real_type) {
+//         nAmount = AmountFromValue(params[1]);
+//     } else {
+//         nAmount = AmountFromValue(Value(::atof(params[1].get_str().c_str())));
+//     }
+    CAmount nAmount = AmountFromValue(params[1]);
 
     // Wallet comments
     CWalletTx wtx;
