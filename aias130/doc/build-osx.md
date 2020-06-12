@@ -44,7 +44,7 @@ Instructions: Homebrew
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/AIAScoinTechnologies/aiascoin/Aias.git
+        git clone https://github.com/AIAScoinTechnologies/aiascoin.git
         cd Aias
 
 2.  Build aiasd:
